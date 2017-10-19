@@ -16,8 +16,8 @@ else{
 app.use(express.static(__dirname+'/client/dist/'))
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname+'/client/dist/index.html'));
-})
+});
 
 app.listen(8080, function () {
-  console.log('Example app listening on port 8000!')
-})
+  console.log('Example app listening on port 8080!');
+});
