@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import {Routes} from '@angular/router';
 import { MembersComponent } from './members/members.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { MatrimonialComponent } from './matrimonial/matrimonial.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { RegisterComponent } from './register/register.component';
 // import { APP_ROUTE_PROVIDER } from './app.route';
 const appRoutes: Routes = [
   {
@@ -45,7 +47,11 @@ const appRoutes: Routes = [
  {
    path:  'contactus',
    component: ContactusComponent
- }
+ },
+ {
+  path:  'register',
+  component: RegisterComponent
+}
 ];
 @NgModule({
   declarations: [
@@ -59,10 +65,14 @@ const appRoutes: Routes = [
      MembershipComponent,
      DirectoryComponent,
      MatrimonialComponent,
-     ContactusComponent
+     ContactusComponent,
+     RegisterComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    // FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
